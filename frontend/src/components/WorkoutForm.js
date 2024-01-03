@@ -24,12 +24,12 @@ const WorkoutForm = () => {
 
     if (!response.ok) {
       setError(json.error);
-    } else {
+    }
+    if (response.ok) {
       setError(null);
       setTitle("");
       setLoad("");
       setReps("");
-      console.log(json);
       dispatch({ type: "CREATE_WORKOUT", payload: json });
     }
   };
